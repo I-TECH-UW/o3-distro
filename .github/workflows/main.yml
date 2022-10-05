@@ -11,7 +11,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}      
+  IMAGE_NAME: ${{ github.repository }}-frontend      
   
 jobs:
   build-publish:
@@ -45,7 +45,7 @@ jobs:
           context: ./frontend
           platforms: linux/amd64,linux/arm64/v8
           push: true
-          tags: ghcr.io/i-tech-uw/o3-distro-frontend:${{steps.meta.outputs.labels["org.opencontainers.image.version"]}}
+          tags: $${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=inline,ref=user/app:buildcache
           cache-to: type=inline,ref=user/app:buildcache,mode=max
