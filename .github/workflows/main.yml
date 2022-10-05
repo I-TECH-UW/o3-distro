@@ -45,7 +45,7 @@ jobs:
           context: ./frontend
           platforms: linux/amd64,linux/arm64/v8
           push: true
-          tags: o3-distro-frontend:latest
+          tags: ghcr.io/i-tech-uw/o3-distro-frontend:${{steps.meta.outputs.labels["org.opencontainers.image.version"]}}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=inline,ref=user/app:buildcache
           cache-to: type=inline,ref=user/app:buildcache,mode=max
