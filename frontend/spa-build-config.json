@@ -30,7 +30,8 @@
     "@openmrs/esm-openconceptlab-app": "next",
     "@openmrs/esm-dispensing-app": "next",
     "@openmrs/esm-fast-data-entry-app": "next",
-    "@openmrs/esm-cohort-builder-app": "next"
+    "@openmrs/esm-cohort-builder-app": "next",
+    "@i-tech-uw/esm-client-registry-app": "latest"
   },
   "spaPath": "$SPA_PATH",
   "apiUrl": "$API_URL",
