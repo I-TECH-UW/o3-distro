@@ -47,6 +47,9 @@
     <htmlwidgets.version>1.10.0</htmlwidgets.version>
     <serialization-xstream.version>0.2.15</serialization-xstream.version>
     <ordertemplates.version>1.0.1</ordertemplates.version>
+    <!-- HIE Support -->
+    <facilityregistry.version></facilityregistry.version>
+    <clientregistry
   </properties>
 
   <dependencies>
