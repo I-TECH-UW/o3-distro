@@ -48,8 +48,9 @@
     <serialization-xstream.version>0.2.15</serialization-xstream.version>
     <ordertemplates.version>1.0.1</ordertemplates.version>
     <!-- HIE Support -->
-    <facilityregistry.version></facilityregistry.version>
-    <clientregistry
+    <facilityregistry.version>0.0.0</facilityregistry.version>
+    <clientregistry.version>1.1.5</clientregistry.version>
+    <labonfhir.version>1.2.0</labonfhir.version>
   </properties>
 
   <dependencies>
@@ -187,6 +188,24 @@
       <groupId>org.openmrs.module</groupId>
       <artifactId>serialization.xstream-api</artifactId>
       <version>${serialization-xstream.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>labonfhir-omod</artifactId>
+      <version>${labonfhir.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>clientregistry-omod</artifactId>
+      <version>${clientregistry.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>facilityregistry-omod</artifactId>
+      <version>${facilityregistry.version}</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

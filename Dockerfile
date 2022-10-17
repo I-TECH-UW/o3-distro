@@ -4,11 +4,19 @@
 FROM openmrs/openmrs-core:dev as dev
 WORKDIR /openmrs_distro
 
+ARG USERNAME
+ARG TOKEN
 ARG MVN_ARGS_SETTINGS="-s /usr/share/maven/ref/settings-docker.xml -U"
 ARG MVN_ARGS="install"
 
 # Copy build files
 COPY pom.xml ./
+
+RUN mkdir -p /root/.m2 \
+    && mkdir /root/.m2/repository
+COPY ./resources/settings.xml.template /root/.m2
+RUN sed -e "s/\${your-github-username}/$USERNAME/" -e "s/\${your-github-token}/$TOKEN/" settings.xml.template | tee /root/.m2/settings.xml
+
 COPY distro ./distro/
 
 # Build the distro

@@ -49,3 +49,18 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=inline,ref=user/app:buildcache
           cache-to: type=inline,ref=user/app:buildcache,mode=max
+      - name: Publish Docker Image
+        uses: docker/build-push-action@v3
+        env:
+          IMAGE_NAME: ${{ github.repository }}-backend      
+        with:
+          context: .
+          build-args: |
+            USERNAME=${{ github.actor }}
+            TOKEN=${{ secrets.GITHUB_TOKEN }}
+          platforms: linux/amd64,linux/arm64/v8
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=inline,ref=user/app:buildcache
+          cache-to: type=inline,ref=user/app:buildcache,mode=max
