@@ -14,7 +14,7 @@ COPY pom.xml ./
 
 RUN mkdir -p /root/.m2 \
     && mkdir /root/.m2/repository
-COPY ./resources/settings.xml.template /root/.m2
+COPY ./config/settings.xml.template /root/.m2
 RUN sed -e "s/\${your-github-username}/$USERNAME/" -e "s/\${your-github-token}/$TOKEN/" settings.xml.template | tee /root/.m2/settings.xml
 
 COPY distro ./distro/

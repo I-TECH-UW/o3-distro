@@ -12,3 +12,8 @@ services:
   backend:
     build:
       context: .
+      args:
+        - TOKEN
+        - USERNAME=pmanko
+    volumes:
+      - ~/.m2:/root/.m2
