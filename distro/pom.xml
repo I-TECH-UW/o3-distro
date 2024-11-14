@@ -55,6 +55,9 @@
     <!-- Stock Management and Billing -->
     <stockmanagement.version>2.0.2-SNAPSHOT</stockmanagement.version>
     <billing.version>1.2.0-SNAPSHOT</billing.version>
+    <!-- IPS and Client Registry-->
+    <ips.version>1.0.0-SNAPSHOT</ips.version>
+    <clientregistry.version>1.1.8-SNAPSHOT</clientregistry.version>
   </properties>
 
   <dependencies>
@@ -179,6 +182,18 @@
       <groupId>org.openmrs.module</groupId>
       <artifactId>calculation-omod</artifactId>
       <version>${calculation.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>ips-omod</artifactId>
+      <version>${ips.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>clientregistry-omod</artifactId>
+      <version>${clientregistry.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -347,4 +362,11 @@
       </build>
     </profile>
   </profiles>
+  <repositories>
+    <repository>
+			<id>uwdigi-repo-central</id>
+      <name>DIGI Public Repository</name>
+      <url>https://packages.uwdigi.org/artifactory/public</url>
+		</repository>
+  </repositories>
 </project>
